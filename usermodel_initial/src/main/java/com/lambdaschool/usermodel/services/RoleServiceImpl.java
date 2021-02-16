@@ -5,6 +5,7 @@ import com.lambdaschool.usermodel.repository.RoleRepository;
 import com.lambdaschool.usermodel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityExistsException;
@@ -81,7 +82,7 @@ public class RoleServiceImpl
         return rolerepos.save(role);
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
     public void deleteAll()
     {
