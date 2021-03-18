@@ -2,11 +2,13 @@ package com.lambdaschool.usermodel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * Main class to start the application.
  */
 @SpringBootApplication
+@EnableJpaAuditing
 public class UserModelApplication
 {
 
